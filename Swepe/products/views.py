@@ -16,3 +16,4 @@ def products_name(request, name):
 
 def products_brand(request, brand):
     return render(request, "products/products_list_brand.html", {'list_products': products, 'brand': brand})
+    ee
