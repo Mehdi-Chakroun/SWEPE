@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://media.discordapp.net/attachments/731596064070828169/845034535765671946/icon.png">
+<style>
+ body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #80CEE1;
+  color: black;
+  }
+.header {
+  overflow: hidden;
+  background-color: #FBCCD1;
+  padding: 20px 10px;
+}
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 10px;
+  transition: all 0.1s ease;
+}
+.header a:hover {
+  background-color: #FDFD96;
+  border-radius: 10px;
+}
+.header a.active {
+  background-color: #FDFD96;
+  color: black;
+}
+.header-right {
+  float: right;
+  overflow: hidden;
+   padding-right: 30px;
+}
+.indent {
+  text-indent: 25px;
+  font-size: 30px;
+}
+button {
+  font-family: Arial, helvetica, sans-serif;
+  background-color: #FDFD96;
+  color: black;
+  border-color: #FDFD96;
+  font-weight: 1000;
+  height: 100px;
+  width: 500px;
+  font-size: 50px;
+  border-radius: 40px;
+}
+.form textarea {margin-bottom: 10px;
+  border: 0;
+  border-radius: 30px;
+  padding: 15px;
+  transition: all 0.5s ease;
+  font-family: sans-serif, Helvetica, Arial;
+  font-weight: bold;
+  font-size: 20px;
+}
+input {
+  margin-bottom: 10px;
+	border: 0;
+	border-radius: 20px;
+	padding: 15px;
+	transition: all 0.5s ease;
+  background-color: white;
+}
+input:hover {
+background-color: #FDFD96;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <a href="/Accueil" class="logo" style="background-color:#FBCCD1"><img src="https://cdn.discordapp.com/attachments/731596064070828169/845034603168792617/SWEPEpink.png"></a>
+  {% if user.is_authenticated %} 
+  <a href="#" style="background-color:#80CEE1; margin-left:250px">Bienvenue, {{user.username}}</a>
+  <a href="/logout">Se déconnecter</a>
+  
+{% else %}
+  <a href="/login" style="margin-left: 250px;background-color:#FDFD96;">Se connecter</a>
+{% endif %}  <div class="header-right">
+    <a href="/Accueil"><font color="black">Accueil</font></a>
+    <a href="/BD"><font color="black">B.D</font></a>
+    <a href="/Jeu"><font color="black">ABC</font></a>
+    <a href="/Table_multi"><font color="black">TABLE</font></a>
+    <a href="/Video"><font color="black">D.A</font></a>
+    <a href="/Animaux"><font color="black">Animaux</font></a>
+    <a class="active" href="/Contact"><font color="black">Contact</font></a>
+    <a href="/Apropos"><font color="black">A propos</font></a>
+  </div>
+</div>
+<center><p class="indent" style="padding-top:30px">Si vous avez des <b>questions</b>, des <b>bugs</b> à reporter ou autre chose veuillez nous contacter sur:</p><br><br>
+<div><p><font size="20" color="#FDFD96"><b><u>mykids.education@gmail.com</u></b></font></p></div>
+<div style="padding-top:50px"><button id="demo" onclick="document.getElementById('demo').innerHTML='05 22 55 55 55'">NUMERO</button></div>
+</div><br><br>
+<div style="padding-right:150px" class="form"><form action="mailto:mykids.education@gmail.com">
+  <table>
+  <tr>
+    <th valign="top" align="right"><br><font size="5" color="black">Reportez un message:</font></th>
+    <td><textarea name="report" cols="50" rows="10"></textarea></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td align="center"><input type="submit" name="save" value="Envoyer"></td>
+</table>
+</center>
+</body>
+</html>

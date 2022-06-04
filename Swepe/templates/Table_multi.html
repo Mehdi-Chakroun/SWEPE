@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Table de multiplication</title>
+   <link rel="shortcut icon" type="image/x-icon" href="https://media.discordapp.net/attachments/731596064070828169/845034535765671946/icon.png">
+   <style type="text/css">
+    body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #80CEE1;
+  color: black;
+  }
+
+  .header a:hover {
+    background-color: #FDFD96;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+  }
+
+.header {
+  overflow: hidden;
+  background-color: #FBCCD1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 10px;
+}
+
+.header a.active {
+  background-color: #FDFD96;
+  color: black;
+  border-radius: 10px;
+}
+
+.header-right {
+  float: right;
+   padding-right: 30px;
+
+   overflow: hidden;
+}
+.indent {
+  text-indent: 25px;
+  font-size: 30px;
+}
+.table {
+  border-color: black;
+  table-layout: fixed;
+  width: 1000px;
+  height: 700px;
+  color:  black;
+  font-size: 50px;
+}
+input {
+  display: block;
+  width: 95%;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  height: 100%;
+  font-size: 20px;
+}
+th {
+  background-color: #FDFD96; 
+  padding:0;
+
+}
+.equalRelative {
+  width: 10%;
+  height: 10%;
+}
+.equalAbsolute {
+  width: 50px;
+  height: 50px;
+}
+#div1 {
+    display: inline-block;
+    padding: 30px;
+    float: left;
+
+
+   
+}
+#div2 {
+    display: inline-block;
+    padding: 50px;
+    float: right;
+    
+}
+#img_right {
+  height: 33%;
+  width: 700px;
+}
+#logo {
+  border-radius: 20px;
+}
+
+button {
+  font-family: Arial, helvetica, sans-serif;
+  background-color: #FDFD96;
+  color: black;
+  border-color: #FDFD96;
+  font-weight: 1000;
+  height: 70px;
+  width: 800px;
+  font-size: 40px;
+  border-radius: 30px;
+}
+#correction {
+  margin-top: 20px;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 35px;
+  border: none;
+  outline: none;
+  background-color: #FBCCD1;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 20px;
+  width: 500px;
+}
+
+</style>
+<script type="text/javascript">
+function myFunction() {
+  var x = document.getElementById("correction");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
+ </head>
+   <body>
+         <div class="header">
+          <a href="/Accueil" class="logo" style="background-color:#FBCCD1"><img src="https://cdn.discordapp.com/attachments/731596064070828169/845034603168792617/SWEPEpink.png"></a>
+          {% if user.is_authenticated %} 
+          <a href="#" style="background-color:#80CEE1; margin-left:250px">Bienvenue, {{user.username}}</a>
+          <a href="/logout">Se déconnecter</a>
+          
+        {% else %}
+          <a href="/login" style="margin-left:250px;background-color:#FDFD96;">Se connecter</a>
+        {% endif %}    <div class="header-right">
+     <a href="/Accueil"><font color="black">Accueil</font></a>
+     <a href="/BD"><font color="black">B.D</font></a>
+     <a href="/Jeu"><font color="black">ABC</font></a>
+     <a class="active" href="/Table_multi"><font color="black">TABLE</font></a>
+     <a href="/Video"><font color="black">D.A</font></a>
+     <a href="/Animaux"><font color="black">Animaux</font></a>
+     <a href="/Contact"><font color="black">Contact</font></a>
+     <a href="/Apropos"><font color="black">A propos</font></a>
+     
+    </div>
+   </div> 
+    <div id="div1">
+      <p><font color="black"><font size="6"><b><u>Exercice:</u></b></font></p><br>
+       <ul type="disk">
+        <li><font size="5">Remplissez le tableau de multiplication suivant:</font></li>
+      </ul>
+  </font>
+
+ 
+
+
+
+     
+      <table class="table">
+        <tr>
+          <th class="equalRelative">x</th class="equalRelative">
+          <th class="equalRelative">0</th class="equalRelative">
+          <th class="equalRelative">1</th class="equalRelative">
+          <th class="equalRelative">2</th class="equalRelative">
+          <th class="equalRelative">3</th class="equalRelative">
+          <th class="equalRelative">4</th class="equalRelative">
+          <th class="equalRelative">5</th class="equalRelative">
+          <th class="equalRelative">6</th class="equalRelative">
+          <th class="equalRelative">7</th class="equalRelative">
+          <th class="equalRelative">8</th class="equalRelative">
+          <th class="equalRelative">9</th class="equalRelative">
+          <th class="equalRelative">10</th class="equalRelative">
+        </tr>
+        <tr>
+          <th>0</th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+        </tr>
+        <tr>
+          <th>1</th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+        </tr>
+        <tr>
+          <th>2</th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+        </tr>
+        <tr>
+          <th>3</th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+        </tr>
+        <tr>
+          <th>4</th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+        </tr>
+        <tr>
+          <th>5</th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+        </tr>
+        <tr>
+          <th>6</th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+        </tr>
+        <tr>
+          <th>7</th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+        </tr>
+        <tr>
+          <th>8</th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+        </tr>
+        <tr>
+          <th>9</th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+        </tr>
+        <tr>
+          <th>10</th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+          <th><input maxlength="3" type="text" name="produit"></th>
+        </tr>
+      </table>
+      
+
+
+
+      <br><br>
+      <button onclick="myFunction()">Cliquez ici pour voir la Correction</button>
+
+      <table id="correction" style="display:none" class="table">
+        <tr>
+          <th class="equalRelative">x</th class="equalRelative">
+          <th class="equalRelative">0</th class="equalRelative">
+          <th class="equalRelative">1</th class="equalRelative">
+          <th class="equalRelative">2</th class="equalRelative">
+          <th class="equalRelative">3</th class="equalRelative">
+          <th class="equalRelative">4</th class="equalRelative">
+          <th class="equalRelative">5</th class="equalRelative">
+          <th class="equalRelative">6</th class="equalRelative">
+          <th class="equalRelative">7</th class="equalRelative">
+          <th class="equalRelative">8</th class="equalRelative">
+          <th class="equalRelative">9</th class="equalRelative">
+          <th class="equalRelative">10</th class="equalRelative">
+        </tr>
+        <tr>
+          <th>0</th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+        </tr>
+        <tr>
+          <th>1</th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="1"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="2"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="3"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="4"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="5"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="6"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="7"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="8"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="9"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="10"></th>
+        </tr>
+        <tr>
+          <th>2</th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="2"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="4"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="6"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="8"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="10"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="12"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="14"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="16"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="18"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="20"></th>
+        </tr>
+        <tr>
+          <th>3</th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="3"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="6"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="9"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="12"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="15"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="18"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="21"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="24"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="27"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="30"></th>
+        </tr>
+        <tr>
+          <th>4</th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="4"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="8"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="12"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="16"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="20"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="24"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="28"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="32"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="36"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="40"></th>
+        </tr>
+        <tr>
+          <th>5</th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="5"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="10"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="15"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="20"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="25"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="30"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="35"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="40"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="45"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="50"></th>
+        </tr>
+        <tr>
+          <th>6</th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="6"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="12"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="18"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="24"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="30"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="36"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="42"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="48"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="54"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="60"></th>
+        </tr>
+        <tr>
+          <th>7</th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="7"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="14"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="21"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="28"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="35"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="42"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="49"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="56"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="63"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="70"></th>
+        </tr>
+        <tr>
+          <th>8</th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="8"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="16"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="24"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="32"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="40"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="48"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="56"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="64"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="72"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="80"></th>
+        </tr>
+        <tr>
+          <th>9</th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="9"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="18"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="27"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="36"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="45"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="54"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="63"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="72"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="81"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="90"></th>
+        </tr>
+        <tr>
+          <th>10</th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="10"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="20"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="30"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="40"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="50"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="60"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="70"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="80"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="90"></th>
+          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="100"></th>
+        </tr>
+      </table>
+
+
+
+
+      
+
+
+    </div>
+    
+       <div id="div2">
+       <img id="img_right" src="https://media.discordapp.net/attachments/731596064070828169/845034555391082516/KIDS.jpg"><br>
+       <img id="img_right" src="https://media.discordapp.net/attachments/731596064070828169/845034564018503760/KIDS2.jpg"><br>
+       <img id="img_right" src="https://media.discordapp.net/attachments/731596064070828169/845034572789448734/KIDS3.jpg">
+     </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Haut de la page</button>
+
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 100px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+      
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
