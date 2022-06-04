@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accueil SWEPE</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://media.discordapp.net/attachments/731596064070828169/845034535765671946/icon.png">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #80CEE1;
+  color: black;
+  }
+
+  .header a:hover {
+    background-color: #FDFD96;
+    transition: all 0.5s ease;
+  }
+
+.header {
+  overflow: hidden;
+  background-color: #FBCCD1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 10px;
+}
+
+.header a.active {
+  background-color: #FDFD96;
+  color: black;
+}
+
+.header-right {
+  float: right;
+  padding-right: 30px;
+  overflow: hidden;
+}
+.indent {
+  text-indent: 25px;
+  font-size: 30px;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 35px;
+  border: none;
+  outline: none;
+  background-color: #FBCCD1;
+  color: white;
+  cursor: pointer;
+  padding: 50px;
+  border-radius: 20px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <a href="/Accueil" class="logo" style="background-color:#FBCCD1"><img src="https://cdn.discordapp.com/attachments/731596064070828169/845034603168792617/SWEPEpink.png"></a>
+  {% if user.is_authenticated %} 
+  <a href="#" style="background-color:#80CEE1; margin-left:250px">Bienvenue, {{user.username}}</a>
+  <a href="/logout">Se déconnecter</a>
+  
+{% else %}
+  <a href="/login" style="margin-left: 250px;background-color:#FDFD96;">Se connecter</a>
+{% endif %}
+  <div class="header-right">
+    <a class="active" href="/Accueil"><font color="black">Accueil</font></a>
+    <a href="/BD"><font color="black">B.D</font></a>
+    <a href="/Jeu"><font color="black">ABC</font></a>
+    <a href="/Table_multi"><font color="black">TABLE</font></a>
+    <a href="/Video"><font color="black">D.A</font></a>
+    <a href="/Animaux"><font color="black">Animaux</font></a>
+    <a href="/Contact"><font color="black">Contact</font></a>
+    <a href="/Apropos"><font color="black">A propos</font></a>
+  </div>
+</div>
+
+<div class="indent" style="padding:100px;">
+  <h1><font color="#FDFD96"><u>Introduction:</u></font></h1>
+  <p class="indent"><b><font color="orange">Bienvenue sur SWEPE: Site Web Educatif Pour Enfants</font></b>,<br>
+  le site qui permet aux enfants d'apprendre tout en s'amusant !<br>
+   Plusieurs activités ludiques et didactiques sont disponibles: <br><br>
+  <ul type="disc"><li>Des bandes dessinées captivantes pour que l'enfant prenne l'habitude<br>
+  de lire dès son plus jeune âge.</li><br>
+  <li>Une table de multiplication vide et un corrigé <br><br>
+   (attention à ne pas tricher !)</li><br>
+   <li>Un jeu avec des animaux. Saura-t-il tous les reconnaître ?</li><br></ul>
+   N'hésitez pas, choisissez l'activité que vous souhaitez et <br>
+   embarquez-vous dans une nouvelle aventure!<br><br>
+   (Pour toute question ou réclamation, consultez la rubrique contact)
+   
+
+ </p>
+
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Haut de la page</button>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+// When the user scrolls down 100px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 100|| document.documentElement.scrollTop > 100) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>
