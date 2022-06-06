@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Accueil SWEPE</title>
+  <title>S'inscrire</title>
   <link rel="shortcut icon" type="image/x-icon" href="https://media.discordapp.net/attachments/731596064070828169/845034535765671946/icon.png">
 
 <style>
@@ -131,13 +131,13 @@ a {
     {% csrf_token %}
     <h1>S'inscrire</h1>
   
-    <input type="text" name="username" placeholder="Username">
+    <input type="text" name="username" placeholder="Pseudo">
   
     <input type="text" name="email" placeholder="Email">
 
-	<input type="password" name="password1" placeholder="Password1">
+	<input type="password" name="password1" placeholder="Mot de passe 1">
 
-	<input type="password" name="password2" placeholder="Password2">
+	<input type="password" name="password2" placeholder="Mot de passe 2">
   
     <input type="submit" value="S'inscrire"> <a href="/login">Se connecter</a> 
   

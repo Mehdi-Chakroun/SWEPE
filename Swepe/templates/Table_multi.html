@@ -65,6 +65,8 @@ input {
   font-family: Helvetica, Arial, sans-serif;
   height: 100%;
   font-size: 20px;
+  background-color:#FBCCD1;
+  font-weight: bold;
 }
 th {
   background-color: #FDFD96; 
@@ -113,7 +115,7 @@ button {
   border-radius: 30px;
 }
 #correction {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 #myBtn {
   display: none;
@@ -182,172 +184,19 @@ function myFunction() {
       <table class="table">
         <tr>
           <th class="equalRelative">x</th class="equalRelative">
-          <th class="equalRelative">0</th class="equalRelative">
-          <th class="equalRelative">1</th class="equalRelative">
-          <th class="equalRelative">2</th class="equalRelative">
-          <th class="equalRelative">3</th class="equalRelative">
-          <th class="equalRelative">4</th class="equalRelative">
-          <th class="equalRelative">5</th class="equalRelative">
-          <th class="equalRelative">6</th class="equalRelative">
-          <th class="equalRelative">7</th class="equalRelative">
-          <th class="equalRelative">8</th class="equalRelative">
-          <th class="equalRelative">9</th class="equalRelative">
-          <th class="equalRelative">10</th class="equalRelative">
+          {% for i in n_list %}
+          <th class="equalRelative">{{ i }}</th class="equalRelative">
+          {%  endfor %}
         </tr>
+        {% for i in n_list %}
         <tr>
-          <th>0</th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
+          <th>{{i}}</th>
+          {% for j in n_list %}
+        <th><input maxlength="3" type="text" name="produit"></th>
+        {% endfor %}
         </tr>
-        <tr>
-          <th>1</th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-        </tr>
-        <tr>
-          <th>2</th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-        </tr>
-        <tr>
-          <th>3</th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-        </tr>
-        <tr>
-          <th>4</th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-        </tr>
-        <tr>
-          <th>5</th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-        </tr>
-        <tr>
-          <th>6</th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-        </tr>
-        <tr>
-          <th>7</th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-        </tr>
-        <tr>
-          <th>8</th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-        </tr>
-        <tr>
-          <th>9</th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-        </tr>
-        <tr>
-          <th>10</th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-          <th><input maxlength="3" type="text" name="produit"></th>
-        </tr>
+        {% endfor %}
+         
       </table>
       
 
@@ -359,172 +208,18 @@ function myFunction() {
       <table id="correction" style="display:none" class="table">
         <tr>
           <th class="equalRelative">x</th class="equalRelative">
-          <th class="equalRelative">0</th class="equalRelative">
-          <th class="equalRelative">1</th class="equalRelative">
-          <th class="equalRelative">2</th class="equalRelative">
-          <th class="equalRelative">3</th class="equalRelative">
-          <th class="equalRelative">4</th class="equalRelative">
-          <th class="equalRelative">5</th class="equalRelative">
-          <th class="equalRelative">6</th class="equalRelative">
-          <th class="equalRelative">7</th class="equalRelative">
-          <th class="equalRelative">8</th class="equalRelative">
-          <th class="equalRelative">9</th class="equalRelative">
-          <th class="equalRelative">10</th class="equalRelative">
+          {% for i in n_list %}
+          <th class="equalRelative">{{i}}</th>
+          {% endfor %}
         </tr>
+        {% for i in n_list %}
         <tr>
-          <th>0</th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-        </tr>
-        <tr>
-          <th>1</th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="1"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="2"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="3"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="4"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="5"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="6"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="7"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="8"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="9"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="10"></th>
-        </tr>
-        <tr>
-          <th>2</th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="2"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="4"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="6"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="8"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="10"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="12"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="14"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="16"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="18"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="20"></th>
-        </tr>
-        <tr>
-          <th>3</th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="3"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="6"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="9"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="12"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="15"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="18"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="21"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="24"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="27"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="30"></th>
-        </tr>
-        <tr>
-          <th>4</th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="4"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="8"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="12"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="16"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="20"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="24"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="28"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="32"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="36"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="40"></th>
-        </tr>
-        <tr>
-          <th>5</th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="5"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="10"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="15"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="20"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="25"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="30"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="35"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="40"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="45"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="50"></th>
-        </tr>
-        <tr>
-          <th>6</th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="6"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="12"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="18"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="24"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="30"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="36"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="42"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="48"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="54"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="60"></th>
-        </tr>
-        <tr>
-          <th>7</th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="7"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="14"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="21"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="28"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="35"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="42"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="49"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="56"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="63"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="70"></th>
-        </tr>
-        <tr>
-          <th>8</th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="8"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="16"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="24"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="32"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="40"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="48"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="56"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="64"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="72"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="80"></th>
-        </tr>
-        <tr>
-          <th>9</th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="9"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="18"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="27"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="36"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="45"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="54"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="63"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="72"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="81"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="90"></th>
-        </tr>
-        <tr>
-          <th>10</th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="0"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="10"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="20"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="30"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="40"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="50"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="60"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="70"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="80"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="90"></th>
-          <th><input style="color:red" maxlength="3" type="text" name="produit" readonly value="100"></th>
-        </tr>
+          <th>{{i}}</th>
+          {% for j in n_list %}
+          <th style="color:red;background-color: #FBCCD1;">{% widthratio i 1 j  %}</th>
+          {% endfor %}
+          </tr>
+          {% endfor %}
       </table>
 
 

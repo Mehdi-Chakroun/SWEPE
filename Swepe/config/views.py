@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 
+n = [0,1,2,3,4,5,6,7,8,9,10]
+
 def register_request(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
@@ -53,7 +55,8 @@ def request_jeu(request):
     return render(request,"Jeu.html")
 
 def request_Table_multi(request):
-    return render(request,"Table_multi.html")
+
+    return render(request,"Table_multi.html",context={"n_list":n})
 
 def request_Video(request):
 	return render(request, "Video.html")
